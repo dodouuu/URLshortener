@@ -32,6 +32,7 @@ cd URLshortener
 macOS 請至nvm 的 GitHub 頁面：https://github.com/creationix/nvm。安裝 nvm
 Windows 請至nvm 的 GitHub 頁面：https://github.com/coreybutler/nvm-windows/releases。安裝 nvm
 nvm install 14.16.0
+nvm use 14.16.0
 npm i express@4.18.1
 npm i express-handlebars@4.0.2
 npm i mongoose@5.9.7
@@ -76,4 +77,3 @@ ctrl + C
 4. MongoDB mongoose 5.9.7
 5. Bootstrap 5.0.2
 6. method-override 3.0.0
-
