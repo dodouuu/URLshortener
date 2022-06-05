@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 // 從短網址轉到原網址
 router.get('/:shortened_URL', (req, res) => {
 
-  completeURL = 'http://localhost:3000/' + req.params.shortened_URL
+  const completeURL = 'http://localhost:3000/' + req.params.shortened_URL
   urlShorten.findOne(
     {
       urlAfterShorten: completeURL
