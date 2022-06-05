@@ -1,0 +1,71 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <img src="https://raw.githubusercontent.com/dodouuu/pictures/main/4530956155517_1.jpg" style="width:100%">
+    </div>
+  </div>
+</div>
+
+<div class="d-flex">
+  <form id="beforeshortenForm" class="needs-validation was-validated ms-5" action="/" method="POST" novalidate>
+    <label for="beforeshorten">before</label>
+    <input type="text" class="form-control m-2" id="beforeshorten" placeholder="input URL here..."
+      name="urlBeforeShorten" value="{{urlBeforeShorten}}" required>
+    <div class="valid-feedback">Looks good!</div>
+    <div class="invalid-feedback">Empty URL</div>
+
+    {{!-- show alert message --}}
+    <div class="alert alert-warning m-2 d-none" role="alert" id="alertMessage">
+      <span>You need to type URL</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary m-2" id="submitUrl">shorten</button>
+  </form>
+
+  <div class="container" style="width:30%">
+    <img src="https://raw.githubusercontent.com/dodouuu/pictures/main/shorten.png" style="width:100%">
+  </div>
+
+  <form class="ms-auto me-5" novalidate>
+    <div>
+      after
+    </div>
+    <div>
+      <input type="text" class="form-control m-2" id="aftershortenForm" value="{{urlAfterShorten}}">
+    </div>
+
+    <div>
+      <button type="button" class="btn btn-primary m-2" id="copyBtn">Copy URL</button>
+    </div>
+  </form>
+
+</div>
+
+<script>
+  const alertMessage = document.querySelector('#alertMessage')
+  const beforeshortenForm = document.querySelector('#beforeshortenForm')
+  const aftershortenForm = document.querySelector('#aftershortenForm')
+  const copyBtn = document.querySelector('#copyBtn')
+
+  beforeshortenForm.addEventListener("submit", function onFormSubmitted(event) {
+
+    if (!beforeshortenForm.checkValidity()) { // 沒通過驗證
+      event.preventDefault();
+      event.stopPropagation();
+      alertMessage.classList.remove('d-none')
+      aftershortenForm.value = ''
+    } else { // 通過驗證
+      alertMessage.classList.add('d-none')
+    }
+  })
+
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(aftershortenForm.value)
+      .then(() => {
+        if (aftershortenForm.value !== '') {
+          alert(`【${aftershortenForm.value}】已複製成功`)
+        }
+      })
+  })
+
+</script>
