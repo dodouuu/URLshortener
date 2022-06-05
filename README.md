@@ -34,6 +34,7 @@ Windows 請至nvm 的 GitHub 頁面：https://github.com/coreybutler/nvm-windows
 nvm install 14.16.0
 nvm use 14.16.0
 npm i express@4.18.1
+npm install -g nodemon
 npm i express-handlebars@4.0.2
 npm i mongoose@5.9.7
 npm install body-parser
@@ -73,7 +74,8 @@ ctrl + C
 ## 開發工具
 1. Node.js 14.16.0
 2. Express 4.18.1
-3. Express-Handlebars 4.0.2
-4. MongoDB mongoose 5.9.7
-5. Bootstrap 5.0.2
-6. method-override 3.0.0
+3. nodemon 2.0.16
+4. Express-Handlebars 4.0.2
+5. MongoDB mongoose 5.9.7
+6. Bootstrap 5.0.2
+7. method-override 3.0.0
